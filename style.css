@@ -23,6 +23,11 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+      background: url(https://media3.giphy.com/media/NE0PYCUVbswo0/giphy.gif?cid=ecf05e47wwx1p25cmrrmvx4gdnkbdmzhs3ubethriobqec19&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+  background-size: auto;
+background-size: ;
+background-size: cover;
+color: white;
    }
 
    input[type="text"] {
