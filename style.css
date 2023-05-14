@@ -1,0 +1,85 @@
+   h1 {
+       text-align: center;
+   }
+
+   ul {
+       list-style: decimal;
+       margin: 0;
+       padding: 0;
+   }
+
+   li {
+       margin: 10px;
+       padding: 10px;
+       border: 1px solid black;
+       display: flex;
+       align-items: center;
+       width: 80vw;
+   }
+
+   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   }
+
+   input[type="text"] {
+       width: 80%;
+   }
+
+   input[type="button"] {
+       width: 10%;
+   }
+
+   .remove-button {
+       margin-left: auto;
+       /* Push the button to the right */
+       background-color: red;
+       /* Make the button red */
+       color: white;
+       /* Make the text white */
+   }
+
+   #vyber_btn {
+    cursor: pointer;
+   }
+
+   .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    background-color: black;
+    padding: 5%;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+   }
+
+   .modal-content {
+    background-image: url(assets/kiszkadoom.png);
+    width: 50px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate 1s linear infinite;
+   }
+
+   .modal-choice {
+    color: white;
+   }
+
+   @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+   }
+   
