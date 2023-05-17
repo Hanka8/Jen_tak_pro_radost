@@ -1,5 +1,22 @@
+   * {
+        font-family: 'VT323', monospace;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+   }
+
+   body {
+    background-image: url(./assets/tanvald_pixel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+   }
+   
    h1 {
        text-align: center;
+       margin-bottom: 2rem;
+       font-size: 1.5rem;
    }
 
    ul {
@@ -11,44 +28,109 @@
    li {
        margin: 10px;
        padding: 10px;
-       border: 1px solid black;
+       background-color: #d2c0b6;
+       border: 3px solid black;
        display: flex;
        align-items: center;
        width: 80vw;
    }
 
    body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: url(https://media3.giphy.com/media/NE0PYCUVbswo0/giphy.gif?cid=ecf05e47wwx1p25cmrrmvx4gdnkbdmzhs3ubethriobqec19&ep=v1_gifs_search&rid=giphy.gif&ct=g);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
    }
+
+   .decoration {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+   }
+
+   .decoration.deco {
+    z-index: 1;
+   }
+
+  .decoration.deco::after {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.192);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+   }
+
 
    input[type="text"] {
        width: 80%;
+       padding: 0.5rem;
+       border: 3px solid rgb(92, 90, 90);
+   }
+
+   input[type="text"]:focus {
+        outline: none;
+       border: 3px solid black;
    }
 
    input[type="button"] {
-       width: 10%;
+    width: fit-content;
+    background-color: #354954;
+    color: white;
+    padding: 5px;
    }
 
    .remove-button {
        margin-left: auto;
-       /* Push the button to the right */
-       background-color: red;
-       /* Make the button red */
+       background-color: #354954;
        color: white;
-       /* Make the text white */
+       padding: 5px;
+   }
+
+   .description {
+    background-color: rgba(255, 255, 255, 0.13);
+    padding: 1rem;
    }
 
    #vyber_btn {
+    position: relative;
+    background-color: #354954;
+    color: white;
     cursor: pointer;
+    padding: 5px;
+    border: 5px solid black;
+    animation: border-animation 2s infinite;
+    
    }
+
+    @keyframes border-animation {
+        0% {
+            border-top-color: rgba(0, 0, 0, 0.745);
+            border-bottom-color: rgba(0, 0, 0, 0.727);
+            border-left-color: rgba(0, 0, 0, 0);
+            border-right-color: rgba(0, 0, 0, 0);
+        }
+
+
+        50% {
+            border-left-color: rgba(0, 0, 0, 0.696);
+            border-right-color: rgba(0, 0, 0, 0.722);
+            border-top-color: rgba(0, 0, 0, 0);
+            border-bottom-color: rgba(0, 0, 0, 0);
+        }
+
+        100% {
+            border-top-color: rgba(0, 0, 0, 0.741);
+            border-bottom-color: rgba(0, 0, 0, 0.773);
+            border-left-color: rgba(0, 0, 0, 0);
+            border-right-color: rgba(0, 0, 0, 0);
+        }
+    }
 
    .modal {
     display: flex;
@@ -58,32 +140,71 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 50vw;
-    background-color: black;
+    width: 0;
+    background-color:transparent;
     padding: 5%;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: 800ms;
+    border: none;
+   }
 
+   .shown {
+        border: 5px solid black;
+        width: 80vw;
+        transition: 400ms ease;
+        background-color: #2e231d;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
    }
 
    .modal-content {
     background-image: url(assets/kiszkadoom.png);
-    width: 50px;
-    height: 80px;
+    width: 40vw;
+    height: 30vh;
     background-size: contain;
     background-repeat: no-repeat;
     animation: rotate 1s linear infinite;
    }
 
+   .shown .modal-content {
+    animation: none;
+    width: 50px;
+    height: 80px;
+    transition: 100ms;
+   }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
    .modal-choice {
+    color: transparent;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+   }
+
+   .shown .modal-choice {
     color: white;
    }
 
-   @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+   .modal-btn {
+    display: none;
    }
+
+   .shown .modal-btn {
+    display: block;
+    background-color: #354954;
+    color: white;
+    padding: 5px;
+    margin-top: 1rem;
+   }
+
+
    
