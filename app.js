@@ -1,3 +1,5 @@
+//decision maker
+
 let todoList = document.getElementById("todo-list");
 let todoInput = document.getElementById("todo-input");
 let todoButton = document.getElementById("todo-button");
@@ -76,4 +78,6 @@ let counter = 0;
         
         decoration.classList.add("deco");
     });
+
+
 
